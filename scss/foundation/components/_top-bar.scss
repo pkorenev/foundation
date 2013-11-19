@@ -36,6 +36,9 @@ $topbar-link-hover-lightness: -30% !default; // Darken by 30%
 $topbar-link-bg-hover: adjust-color($topbar-dropdown-bg, $lightness: $topbar-link-hover-lightness) !default;
 $topbar-link-bg-active: darken($topbar-bg-color, 3%) !default;
 
+$topbar-link-padding-left: $topbar-height / 3 !default;
+$topbar-link-padding-right: $topbar-link-padding-left;
+
 
 $topbar-dropdown-label-color: #555 !default;
 $topbar-dropdown-label-text-transform: uppercase !default;
@@ -154,7 +157,7 @@ meta.foundation-mq-topbar {
           color: $topbar-link-color;
           width: 50%;
           display: block;
-          padding: 0 $topbar-height / 3;
+          padding: 0 $topbar-link-padding-left;
         }
       }
     }
@@ -172,7 +175,7 @@ meta.foundation-mq-topbar {
         font-weight: $topbar-menu-link-weight;
         position: relative;
         display: block;
-        padding: 0 $topbar-height / 3;
+        padding: 0 $topbar-link-padding-left;
         height: $topbar-height;
         line-height: $topbar-height;
       }
@@ -269,7 +272,7 @@ meta.foundation-mq-topbar {
         width: 100%;
         color: $topbar-link-color;
         padding: 12px 0 12px 0;
-        padding-#{$default-float}: $topbar-height / 3;
+        padding-#{$default-float}: $topbar-link-padding-#{$default-float};
         font-size: $topbar-link-font-size;
         font-weight: $topbar-link-weight;
         background: $topbar-dropdown-bg;
@@ -277,8 +280,8 @@ meta.foundation-mq-topbar {
         &.button {
           background: $primary-color;
           font-size: $topbar-link-font-size;
-           padding-right: $topbar-height / 3;
-           padding-left: $topbar-height / 3;
+           padding-right: $topbar-link-padding-right;
+           padding-left: $topbar-link-padding-left;
           &:hover {
             background: darken($primary-color, 10%);
           }
@@ -318,7 +321,7 @@ meta.foundation-mq-topbar {
     }
 
     // Add some extra padding for list items contains buttons
-    .has-form { padding: $topbar-height / 3; }
+    .has-form { padding: $topbar-link-padding-left; }
 
     // Styling for list items that have a dropdown within them.
     .has-dropdown {
@@ -358,7 +361,7 @@ meta.foundation-mq-topbar {
 
         a {
           font-weight: normal;
-          padding: 8px $topbar-height / 3;
+          padding: 8px $topbar-link-padding-left;
           &.parent-link {
             font-weight: $topbar-link-weight;
           }
@@ -374,7 +377,7 @@ meta.foundation-mq-topbar {
       }
 
       label {
-        padding: 8px $topbar-height / 3 2px;
+        padding: 8px $topbar-link-padding-left 2px;
         margin-bottom: 0;
         text-transform: $topbar-dropdown-label-text-transform;
         color: $topbar-dropdown-label-color;
@@ -444,7 +447,7 @@ meta.foundation-mq-topbar {
           }
         }
         a:not(.button) {
-          padding: 0 $topbar-height / 3;
+          padding: 0 $topbar-link-padding-right 0 $topbar-link-padding-left;
           line-height: $topbar-height;
           background: $topbar-bg;
           &:hover { background: $topbar-link-bg-hover; }
@@ -456,7 +459,7 @@ meta.foundation-mq-topbar {
         @if($topbar-arrows){
 
           & > a {
-            padding-#{$opposite-direction}: $topbar-height / 3 + 20 !important;
+            padding-#{$opposite-direction}: $topbar-link-padding-#{$opposite-direction} + 20 !important;
             &:after {
               @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), top);
               margin-top: -($topbar-dropdown-toggle-size / 2);
@@ -501,7 +504,7 @@ meta.foundation-mq-topbar {
             color: $topbar-dropdown-link-color;
             line-height: 1;
             white-space: nowrap;
-            padding: 7px $topbar-height / 3;
+            padding: 7px $topbar-link-padding-left;
             background: $topbar-dropdown-link-bg;
           }
 
@@ -531,7 +534,7 @@ meta.foundation-mq-topbar {
 
       .has-form {
         background: $topbar-bg;
-        padding: 0 $topbar-height / 3;
+        padding: 0 $topbar-link-padding-left;
         height: $topbar-height;
       }
 
