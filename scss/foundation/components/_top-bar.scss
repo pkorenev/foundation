@@ -272,11 +272,11 @@ meta.foundation-mq-topbar {
         width: 100%;
         color: $topbar-link-color;
         padding: 12px 0 12px 0;
-        @if $default-float == left
-          padding-left: $topbar-link-padding-left;
-        @else if $default-float == right
-          padding-right: $topbar-link-padding-right;
-        @end
+        //@if $default-float == left
+        //  padding-left: $topbar-link-padding-left;
+        //@else if $default-float == right
+        //  padding-right: $topbar-link-padding-right;
+        //@end
         font-size: $topbar-link-font-size;
         font-weight: $topbar-link-weight;
         background: $topbar-dropdown-bg;
