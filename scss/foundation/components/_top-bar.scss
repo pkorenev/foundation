@@ -465,7 +465,7 @@ meta.foundation-mq-topbar {
 
           & > a {
             //@if $opposite-direction == left
-              padding-#{$opposite-direction}:  $topbar-link-padding-left + em-calc(20) !important;
+              padding-#{$opposite-direction}:  $topbar-link-padding-left /*+ em-calc(20)*/ !important;
             //@else if $opposite-direction == right
               //padding-#{$opposite-direction}: $topbar-link-padding-right + 20 !important;
             //@end
