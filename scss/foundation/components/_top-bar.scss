@@ -36,6 +36,7 @@ $topbar-link-hover-lightness: -30% !default; // Darken by 30%
 $topbar-link-bg-hover: adjust-color($topbar-dropdown-bg, $lightness: $topbar-link-hover-lightness) !default;
 $topbar-link-bg-active: darken($topbar-bg-color, 3%) !default;
 
+
 $topbar-link-padding-left: $topbar-height / 3 !default;
 $topbar-link-padding-right: $topbar-link-padding-left !default;
 
@@ -272,11 +273,11 @@ meta.foundation-mq-topbar {
         width: 100%;
         color: $topbar-link-color;
         padding: 12px 0 12px 0;
-        @if $default-float == left
-          padding-left: $topbar-link-padding-left;
-        @else if $default-float == right
-          padding-right: $topbar-link-padding-right;
-        @end
+        //@if $default-float == left
+          padding-#{$default-float}: $topbar-link-padding-left;
+        //@else if $default-float == right
+        //  padding-right: $topbar-link-padding-right;
+        //@end
         font-size: $topbar-link-font-size;
         font-weight: $topbar-link-weight;
         background: $topbar-dropdown-bg;
@@ -463,11 +464,11 @@ meta.foundation-mq-topbar {
         @if($topbar-arrows){
 
           & > a {
-            @if $opposite-direction == left
+            //@if $opposite-direction == left
               padding-#{$opposite-direction}: $topbar-link-padding-left + 20 !important;
-            @else if $opposite-direction == right
-              padding-#{$opposite-direction}: $topbar-link-padding-right + 20 !important;
-            @end
+            //@else if $opposite-direction == right
+              //padding-#{$opposite-direction}: $topbar-link-padding-right + 20 !important;
+            //@end
 
             &:after {
               @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), top);
